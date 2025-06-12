@@ -23,7 +23,69 @@ Tooplate 2115 Marvel
 https://www.tooplate.com/view/2115-marvel
 
 -->
+<style>
+  .sponsor-logo {
+    width: 100%;
+    height: 100px;
+    object-fit: contain;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    padding: 10px;
+  }
+  #floating-countdown {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #343a40;
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  z-index: 9999;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  font-family: 'Arial', sans-serif;
+}
+
+</style>
+
+
+
   </head>
+  <div id="floating-countdown">
+  <strong>IndabaX starts in:</strong><br>
+  <span id="days">--</span>d
+  <span id="hours">--</span>h
+  <span id="minutes">--</span>m
+  <span id="seconds">--</span>s
+</div>
+
+<script>
+  const targetDate = new Date("June 18, 2025 09:00:00").getTime();
+
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+
+    if (distance <= 0) {
+      document.getElementById("floating-countdown").innerHTML = "IndabaX is live!";
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("days").textContent = days;
+    document.getElementById("hours").textContent = hours;
+    document.getElementById("minutes").textContent = minutes;
+    document.getElementById("seconds").textContent = seconds;
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
+
   <body>
 
     <!-- MENU -->
@@ -52,6 +114,7 @@ https://www.tooplate.com/view/2115-marvel
                     <li class="nav-item">
                         <a href="#organizers" class="nav-link"><span data-hover="Organizers">Organizers</span></a>
                     </li>
+                    
                   </ul>
 
                 <ul class="navbar-nav ml-lg-auto">
@@ -83,12 +146,24 @@ https://www.tooplate.com/view/2115-marvel
                                 </div>
                         </h1>
 
-                        <p>IndabaX Kenya is the Kenyan chapter of the Deep Learning Indaba, an initiative that promotes the growth and advancement of Artificial Intelligence (AI) and Machine Learning (ML) across Africa. Rooted in the values of community and knowledge-sharing, IndabaX Kenya brings together students, researchers, academics, tech professionals and entrepreneurs to explore and engage with AI innovations shaping the country.
+                     <p>
+  IndabaX Kenya is the Kenyan chapter of the Deep Learning Indaba, an initiative that promotes the growth and advancement of Artificial Intelligence (AI) and Machine Learning (ML) across Africa. Rooted in the values of community and knowledge-sharing, IndabaX Kenya brings together students, researchers, academics, tech professionals and entrepreneurs to explore and engage with AI innovations shaping the country.
+  <br><br>
+  This vibrant three-day event is filled with keynote talks, panel discussions, workshops, showcases and networking opportunities. Whether you're a student curious about AI or a professional shaping its future, IndabaX Kenya offers a space to connect, learn and grow.
+  <br><br>
+  <marquee style="color: orange; font-weight: bold;">
+    Theme: Akili unde katika siasa na demokrasia
+  </marquee>
+</p>
 
-This vibrant three-day event is filled with keynote talks, panel discussions, workshops, showcases and networking opportunities. Whether you're a student curious about AI or a professional shaping its future, IndabaX Kenya offers a space to connect, learn and grow.
-.
                         <div class="custom-btn-group mt-4">
-                          <a href="#" class="btn mr-lg-2 custom-btn"><i class='uil uil-file-alt'></i> Download Programme</a>
+                          <a href="https://docs.google.com/document/d/1rezAMVJRHEKaHuxaiaZnT8p9h1HXoODg/edit?usp=sharing&ouid=108803968919774699048&rtpof=true&sd=true" 
+   class="btn mr-lg-2 custom-btn" 
+   target="_blank" 
+   rel="noopener noreferrer">
+   <i class='uil uil-file-alt'></i> Download Programme
+</a>
+
                           <a href="#contact" class="btn custom-btn custom-btn-bg custom-btn-link">Join us this year! from 18th -20th June</a>
                         </div>
                     </div>
@@ -317,7 +392,78 @@ This vibrant three-day event is filled with keynote talks, panel discussions, wo
         </div>
     </section>
 
-    <!-- CONTACT -->
+
+
+<!-- SPONSORS -->
+<section class="sponsors py-5" id="sponsors">
+  <div class="container">
+    <div class="row text-center mb-5">
+      <div class="col-lg-12">
+        <h2>Sponsors/Partners of the Event</h2>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+
+      <!-- Sponsor 1 -->
+      <div class="col-6 col-sm-4 col-md-3 mb-4">
+        <img src="images/indaba/Google.webp" class="sponsor-logo" alt="Sponsor 1 Logo">
+        <h4 class="text-center">Google</h4>
+      </div>
+
+      <!-- Sponsor 2 -->
+      <div class="col-6 col-sm-4 col-md-3 mb-4">
+        <img src="images/indaba/masno.jpeg" class="sponsor-logo" alt="Sponsor 2 Logo">
+        <h4 class="text-center">Maseno University</h4>
+      </div>
+
+      <!-- Sponsor 3 -->
+      <div class="col-6 col-sm-4 col-md-3 mb-4">
+        <img src="images/indaba/zone.png" class="sponsor-logo" alt="Sponsor 3 Logo">
+        <h4 class="text-center">Zone 01 Kisumu</h4>
+
+      </div>
+
+      <div class="col-6 col-sm-4 col-md-3 mb-4">
+        <img src="images/indaba/mwaiton.jpeg" class="sponsor-logo" alt="Sponsor 3 Logo">
+        <h4 class="text-center">Mwaiton Consultancy</h4>
+      </div>
+      <!-- Add more sponsors as needed -->
+
+    </div>
+
+    <div class="row justify-content-center">
+
+      <!-- Sponsor 1 -->
+      <div class="col-6 col-sm-4 col-md-3 mb-4">
+        <img src="images/indaba/Edutab.png" class="sponsor-logo" alt="Sponsor 1 Logo">
+        <h4 class="text-center">Edutab Africa</h4>
+      </div>
+
+      <!-- Sponsor 2 -->
+      <div class="col-6 col-sm-4 col-md-3 mb-4">
+        <img src="images/indaba/mcaai.jpg" class="sponsor-logo" alt="Sponsor 2 Logo">
+        <h4 class="text-center">MCAAI</h4>
+      </div>
+
+      <!-- Sponsor 3 -->
+      <div class="col-6 col-sm-4 col-md-3 mb-4">
+        <img src="images/indaba/dli.png" class="sponsor-logo" alt="Sponsor 3 Logo">
+        <h4 class="text-center">Deep Learning Indaba</h4>
+
+      </div>
+
+      <div class="col-6 col-sm-4 col-md-3 mb-4">
+        <img src="images/indaba/mucisa.jpg" class="sponsor-logo" alt="Sponsor 3 Logo">
+        <h4 class="text-center">MUCISA</h4>
+      </div>
+      <!-- Add more sponsors as needed -->
+
+    </div>
+  </div>
+</section>
+
+
+    <!-- CONTACT 
     <section class="contact py-5" id="contact">
       <div class="container">
         <div class="row">
@@ -369,7 +515,7 @@ This vibrant three-day event is filled with keynote talks, panel discussions, wo
         </div>
       </div>
     </section>
-
+-->
     <!-- FOOTER -->
      <footer class="footer py-5">
           <div class="container">
